@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anna Carolyna Barros — Nutricionista Clínica e Esportiva | Rio de Janeiro</title>
+<meta name="description" content="Nutricionista em Pilares, Rio de Janeiro. Emagrecimento, hipertrofia, nutrição esportiva e comportamento alimentar. Atendimento on-line e presencial." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#FBF7F3;
+    --branco:#FFFFFF;
+    --cacau:#3E2C22;
+    --cacau-70:rgba(62,44,34,.70);
+    --mocha:#96715A;
+    --mocha-claro:#E3D2C4;
+    --morango:#E4586F;
+    --morango-suave:#FBE7EA;
+    --folha:#7FA98F;
+    --display:"Fraunces", Georgia, serif;
+    --corpo:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --r-lg:32px;
+    --r-md:20px;
+    --max:1140px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--papel);
+    color:var(--cacau);
+    font-family:var(--corpo);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;letter-spacing:-.015em;}
+  p{margin:0;}
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+  :focus-visible{outline:3px solid var(--morango);outline-offset:3px;border-radius:6px;}
+
+  /* ---------- Botões ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:var(--corpo);font-size:.95rem;font-weight:600;
+    padding:14px 26px;border-radius:999px;text-decoration:none;
+    border:1.5px solid transparent;cursor:pointer;
+    transition:transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+  }
+  .btn-principal{background:var(--morango);color:#fff;box-shadow:0 10px 24px -14px rgba(228,88,111,.9);}
+  .btn-principal:hover{transform:translateY(-2px);background:#D64A62;}
+  .btn-vazado{border-color:var(--mocha-claro);color:var(--cacau);background:transparent;}
+  .btn-vazado:hover{border-color:var(--mocha);background:#fff;transform:translateY(-2px);}
+
+  /* ---------- Cabeçalho ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,247,243,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(150,113,90,.14);
+  }
+  .barra{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 24px;max-width:var(--max);margin:0 auto;}
+  .marca{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .marca .mono{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--branco);border:1px solid var(--mocha-claro);
+    display:grid;place-items:center;overflow:hidden;flex:none;
+  }
+  .marca .mono img{width:100%;height:100%;object-fit:contain;padding:4px;}
+  .marca .mono .mono-svg{width:30px;height:auto;color:var(--mocha);}
+  .marca b{font-family:var(--display);font-weight:400;font-size:1.02rem;display:block;line-height:1.15;}
+  .marca small{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mocha);}
+  nav{display:flex;align-items:center;gap:28px;}
+  nav a{font-size:.9rem;font-weight:500;text-decoration:none;color:var(--cacau-70);transition:color .16s;}
+  nav a:hover{color:var(--morango);}
+  .barra .btn{padding:11px 20px;font-size:.88rem;}
+  @media (max-width:900px){ nav{display:none;} }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:70px 0 40px;}
+  .hero-grade{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .sobrancelha{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mocha);margin-bottom:24px;
+  }
+  .sobrancelha::before{content:"";width:26px;height:1.5px;background:var(--morango);}
+  h1{font-size:clamp(2.6rem,5.4vw,4.05rem);}
+  h1 em{font-style:italic;color:var(--morango);font-variation-settings:"SOFT" 100;}
+  .hero p.lead{margin-top:26px;font-size:1.08rem;color:var(--cacau-70);max-width:46ch;}
+  .hero-acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .nota-google{
+    display:flex;align-items:center;gap:12px;margin-top:34px;
+    font-size:.86rem;color:var(--cacau-70);
+  }
+  .estrelas{color:#F2A93B;letter-spacing:2px;font-size:.95rem;}
+  .nota-google b{font-family:var(--display);font-size:1.35rem;font-weight:500;color:var(--cacau);}
+
+  /* Foto + selo giratório */
+  .retrato{position:relative;justify-self:center;width:min(100%,420px);}
+  .retrato .moldura{
+    position:relative;aspect-ratio:4/5;
+    border-radius:220px 220px 28px 28px;
+    overflow:hidden;
+    background:linear-gradient(160deg,#F3E6DC 0%,#EADDD2 45%,#F7E3E6 100%);
+    box-shadow:0 30px 60px -34px rgba(62,44,34,.45);
+  }
+  .retrato .moldura img{width:100%;height:100%;object-fit:cover;}
+  .retrato .moldura img.falhou{display:none;}
+  .vazio{
+    position:absolute;inset:0;display:grid;place-content:center;place-items:center;gap:8px;text-align:center;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mocha);
+  }
+  .vazio .ac{width:82px;height:auto;color:var(--mocha);opacity:.75;}
+  .retrato .moldura img:not(.falhou) + .vazio{display:none;}
+
+  .selo{
+    position:absolute;right:-26px;bottom:-18px;width:132px;height:132px;
+    background:var(--cacau);border-radius:50%;
+    display:grid;place-items:center;
+    box-shadow:0 18px 34px -18px rgba(62,44,34,.7);
+  }
+  .selo svg{position:absolute;inset:0;width:100%;height:100%;animation:girar 26s linear infinite;}
+  .selo text{fill:#F6EDE5;font-family:var(--corpo);font-size:8.3px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;}
+  .selo .miolo{width:40px;height:auto;color:#F6EDE5;}
+  @keyframes girar{to{transform:rotate(360deg);}}
+
+  @media (max-width:880px){
+    .hero{padding:44px 0 24px;}
+    .hero-grade{grid-template-columns:1fr;gap:44px;}
+    .retrato{width:min(100%,340px);}
+    .selo{width:104px;height:104px;right:-8px;}
+  }
+
+  /* ---------- Faixa de especialidades ---------- */
+  .faixa{background:var(--cacau);color:#F6EDE5;overflow:hidden;padding:20px 0;margin-top:46px;}
+  .esteira{display:flex;gap:0;width:max-content;animation:correr 34s linear infinite;}
+  .esteira span{
+    font-family:var(--display);font-size:1.35rem;font-weight:300;
+    padding:0 30px;white-space:nowrap;display:flex;align-items:center;gap:30px;
+  }
+  .esteira span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--morango);flex:none;}
+  @keyframes correr{to{transform:translateX(-50%);}}
+
+  /* ---------- Seções ---------- */
+  section{padding:96px 0;}
+  .titulo-secao{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:20ch;}
+  .rotulo{
+    font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--morango);margin-bottom:16px;display:block;
+  }
+
+  /* Sobre */
+  .sobre-grade{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center;}
+  .sobre-foto{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;position:relative;
+    background:linear-gradient(150deg,#EFE2D8,#F7E3E6);box-shadow:0 26px 50px -34px rgba(62,44,34,.5);}
+  .sobre-foto img{width:100%;height:100%;object-fit:cover;}
+  .sobre-texto p{color:var(--cacau-70);margin-top:20px;}
+  .fichas{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
+  .ficha{
+    font-size:.82rem;font-weight:500;padding:9px 16px;border-radius:999px;
+    background:var(--branco);border:1px solid var(--mocha-claro);color:var(--mocha);
+  }
+  @media (max-width:880px){ .sobre-grade{grid-template-columns:1fr;gap:36px;} }
+
+  /* Atendimento */
+  .cartoes{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:52px;}
+  .cartao{
+    background:var(--branco);border-radius:var(--r-md);padding:32px 26px 30px;
+    border:1px solid rgba(150,113,90,.16);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cartao:hover{transform:translateY(-5px);box-shadow:0 22px 40px -30px rgba(62,44,34,.55);}
+  .cartao .glifo{
+    width:44px;height:44px;border-radius:14px;background:var(--morango-suave);
+    display:grid;place-items:center;margin-bottom:20px;color:var(--morango);
+  }
+  .cartao h3{font-size:1.22rem;margin-bottom:10px;}
+  .cartao p{font-size:.92rem;color:var(--cacau-70);}
+  @media (max-width:980px){ .cartoes{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cartoes{grid-template-columns:1fr;} }
+
+  /* Como funciona */
+  .processo{background:var(--branco);}
+  .passos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px;}
+  .passo{border-top:1.5px solid var(--mocha-claro);padding-top:22px;}
+  .passo b{
+    display:block;font-family:var(--display);font-size:.95rem;color:var(--morango);
+    letter-spacing:.06em;margin-bottom:14px;
+  }
+  .passo h3{font-size:1.1rem;margin-bottom:8px;}
+  .passo p{font-size:.9rem;color:var(--cacau-70);}
+  @media (max-width:880px){ .passos{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .passos{grid-template-columns:1fr;} }
+
+  /* Formatos */
+  .formatos{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px;}
+  .formato{
+    border-radius:var(--r-lg);padding:38px 34px;
+    border:1px solid rgba(150,113,90,.18);background:var(--branco);
+  }
+  .formato.destaque{background:var(--cacau);color:#F6EDE5;border-color:var(--cacau);}
+  .formato.destaque .rotulo{color:#F0A9B5;}
+  .formato h3{font-size:1.5rem;margin-bottom:12px;}
+  .formato p{font-size:.95rem;color:var(--cacau-70);}
+  .formato.destaque p{color:rgba(246,237,229,.72);}
+  .formato ul{list-style:none;padding:0;margin:22px 0 0;font-size:.92rem;}
+  .formato li{padding:9px 0;border-top:1px solid rgba(150,113,90,.18);display:flex;gap:10px;align-items:flex-start;}
+  .formato.destaque li{border-color:rgba(246,237,229,.18);}
+  .formato li::before{content:"—";color:var(--morango);flex:none;}
+  @media (max-width:760px){ .formatos{grid-template-columns:1fr;} }
+
+  /* Contato */
+  .contato{background:var(--branco);}
+  .contato-grade{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .campo{margin-bottom:18px;}
+  .campo label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mocha);margin-bottom:8px;}
+  .campo input,.campo select{
+    width:100%;padding:15px 18px;border-radius:14px;
+    border:1.5px solid var(--mocha-claro);background:var(--papel);
+    font-family:var(--corpo);font-size:1rem;color:var(--cacau);
+    transition:border-color .16s, background .16s;
+  }
+  .campo input:hover,.campo select:hover{border-color:var(--mocha);}
+  .campo input:focus,.campo select:focus{background:#fff;border-color:var(--morango);outline:none;}
+  .previa{
+    margin-top:22px;font-size:.88rem;color:var(--cacau-70);
+    background:var(--morango-suave);border-radius:16px;padding:16px 20px;
+  }
+  .previa strong{color:var(--cacau);font-weight:600;}
+  #enviar{width:100%;justify-content:center;margin-top:20px;}
+
+  .infos{display:grid;gap:2px;}
+  .info{display:flex;gap:18px;padding:20px 0;border-top:1px solid rgba(150,113,90,.18);text-decoration:none;transition:padding-left .18s ease;}
+  .info:first-child{border-top:none;}
+  .info:hover{padding-left:8px;}
+  .info .ic{color:var(--morango);flex:none;margin-top:2px;}
+  .info span{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mocha);margin-bottom:3px;}
+  .info b{font-weight:500;font-size:1rem;}
+  @media (max-width:880px){ .contato-grade{grid-template-columns:1fr;gap:44px;} }
+
+  /* Rodapé */
+  footer{background:var(--cacau);color:rgba(246,237,229,.75);padding:56px 0 34px;font-size:.88rem;}
+  .rodape-topo{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid rgba(246,237,229,.16);}
+  .rodape-topo .assinatura{width:220px;height:auto;color:#F6EDE5;}
+  .redes{display:flex;gap:12px;}
+  .redes a{
+    width:42px;height:42px;border-radius:50%;border:1px solid rgba(246,237,229,.28);
+    display:grid;place-items:center;color:#F6EDE5;transition:background .18s,color .18s,transform .18s;
+  }
+  .redes a:hover{background:var(--morango);border-color:var(--morango);color:#fff;transform:translateY(-3px);}
+  .rodape-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:.8rem;color:rgba(246,237,229,.55);}
+
+  /* Zap flutuante */
+  .flutuante{
+    position:fixed;right:20px;bottom:20px;z-index:60;
+    width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
+    display:grid;place-items:center;box-shadow:0 14px 28px -12px rgba(37,211,102,.8);
+    transition:transform .2s ease;
+  }
+  .flutuante:hover{transform:scale(1.08);}
+
+  .revelar{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .revelar.visivel{opacity:1;transform:none;}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;}
+    .revelar{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Monograma vetorial (usado enquanto o PNG oficial não estiver em assets/) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mono-ac" viewBox="0 0 132 96">
+    <g fill="currentColor" font-family="Fraunces, Georgia, serif" font-weight="300">
+      <text x="8" y="80" font-size="86" font-style="italic">A</text>
+      <text x="52" y="84" font-size="96">C</text>
+    </g>
+  </symbol>
+  <symbol id="lockup-ac" viewBox="0 0 360 210">
+    <g fill="currentColor" font-family="Fraunces, Georgia, serif">
+      <g font-weight="300">
+        <text x="118" y="92" font-size="86" font-style="italic">A</text>
+        <text x="162" y="96" font-size="96">C</text>
+      </g>
+      <text x="180" y="150" font-size="27" font-weight="400" text-anchor="middle" letter-spacing="3.2">ANNA CAROLYNA BARROS</text>
+      <rect x="40" y="163" width="280" height="1.4"/>
+      <text x="180" y="190" font-size="14" font-weight="400" text-anchor="middle" letter-spacing="2.6" font-family="Plus Jakarta Sans, sans-serif">NUTRICIONISTA CLÍNICA E ESPORTIVA</text>
+    </g>
+  </symbol>
+</svg>
+
+<header>
+  <div class="barra">
+    <a class="marca" href="#topo">
+      <span class="mono">
+        <img src="assets/logo-ac.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <svg class="mono-svg" viewBox="0 0 132 96" style="display:none"><use href="#mono-ac"/></svg>
+      </span>
+      <span>
+        <b>Anna Carolyna Barros</b>
+        <small>Nutricionista</small>
+      </span>
+    </a>
+    <nav>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#atendimento">Atendimento</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-principal" href="https://wa.me/5521977494288" target="_blank" rel="noopener">Agendar consulta</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <div class="hero wrap">
+    <div class="hero-grade">
+      <div>
+        <p class="sobrancelha">Nutrição clínica e esportiva · Rio de Janeiro</p>
+        <h1>Sua jornada de autoconhecimento e <em>consciência alimentar</em> começa aqui.</h1>
+        <p class="lead">Emagrecimento, hipertrofia, esporte e comportamento alimentar — com um plano feito para a sua rotina, e não contra ela.</p>
+        <div class="hero-acoes">
+          <a class="btn btn-principal" href="https://wa.me/5521977494288" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.2-.8 1-.9 1.1-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.7 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 18.3c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a class="btn btn-vazado" href="https://www.instagram.com/nutricarolbarross" target="_blank" rel="noopener">Ver o Instagram</a>
+        </div>
+        <div class="nota-google">
+          <b>5,0</b>
+          <span class="estrelas" aria-hidden="true">★★★★★</span>
+          <span>31 avaliações no Google</span>
+        </div>
+      </div>
+
+      <div class="retrato">
+        <div class="moldura">
+          <img src="assets/anna-hero.jpg" alt="Anna Carolyna Barros, nutricionista, em seu consultório" onerror="this.classList.add('falhou')">
+          <div class="vazio"><svg class="ac" viewBox="0 0 132 96"><use href="#mono-ac"/></svg>foto principal</div>
+        </div>
+        <div class="selo" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <defs><path id="anel" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+            <text><textPath href="#anel" startOffset="0%">emagrecimento · hipertrofia · esporte · comportamento · </textPath></text>
+          </svg>
+          <svg class="miolo" viewBox="0 0 132 96"><use href="#mono-ac"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAIXA -->
+  <div class="faixa" aria-hidden="true">
+    <div class="esteira">
+      <span>Nutrição esportiva</span><span>Emagrecimento</span><span>Hipertrofia</span><span>Comportamento alimentar</span><span>Medicina do estilo de vida</span>
+      <span>Nutrição esportiva</span><span>Emagrecimento</span><span>Hipertrofia</span><span>Comportamento alimentar</span><span>Medicina do estilo de vida</span>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="wrap sobre-grade">
+      <div class="sobre-foto revelar">
+        <img src="assets/anna-sobre.jpg" alt="Retrato de Anna Carolyna Barros" onerror="this.classList.add('falhou')">
+        <div class="vazio"><svg class="ac" viewBox="0 0 132 96"><use href="#mono-ac"/></svg>foto sobre mim</div>
+      </div>
+      <div class="sobre-texto revelar">
+        <span class="rotulo">Sobre mim</span>
+        <h2 class="titulo-secao">Oi, eu sou a Anna Carolyna.</h2>
+        <p>Tenho 24 anos, sou apaixonada por alimentação saudável, animais e natureza. Sou nutricionista especialista em nutrição esportiva, comportamental, emagrecimento e hipertrofia, e no consultório sigo a linha da medicina do estilo de vida.</p>
+        <p>Sempre me interessei por atividade física e por comer bem — hoje meu objetivo é promover saúde e bem-estar através da alimentação. Acredito no poder dos alimentos como ferramenta para melhorar a qualidade de vida das pessoas.</p>
+        <p>Meu compromisso é ajudar o meu time a alcançar seus objetivos e a construir uma relação positiva com a comida, com uma abordagem personalizada e baseada em evidências. Vamos juntos?</p>
+        <div class="fichas">
+          <span class="ficha">Abordagem baseada em evidências</span>
+          <span class="ficha">Medicina do estilo de vida</span>
+          <span class="ficha">Sem dietas restritivas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATENDIMENTO -->
+  <section id="atendimento" style="padding-top:0">
+    <div class="wrap">
+      <span class="rotulo revelar">Atendimento</span>
+      <h2 class="titulo-secao revelar">Quatro caminhos, um plano só seu.</h2>
+      <div class="cartoes">
+        <article class="cartao revelar">
+          <div class="glifo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+          <h3>Emagrecimento</h3>
+          <p>Perda de peso sustentável, com comida de verdade e ajustes que cabem no seu dia a dia.</p>
+        </article>
+        <article class="cartao revelar">
+          <div class="glifo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 9v6M20 9v6M7 6v12M17 6v12M7 12h10"/></svg></div>
+          <h3>Hipertrofia</h3>
+          <p>Estratégia alimentar para ganho de massa muscular alinhada ao seu treino e à sua recuperação.</p>
+        </article>
+        <article class="cartao revelar">
+          <div class="glifo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-6 4 3 4-7 6 4"/><circle cx="7" cy="6" r="2"/></svg></div>
+          <h3>Nutrição esportiva</h3>
+          <p>Periodização, pré e pós-treino e suplementação para render mais na sua modalidade.</p>
+        </article>
+        <article class="cartao revelar">
+          <div class="glifo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12.5c0 4-3.8 7.5-8.5 7.5a10 10 0 0 1-3-.4L4 21l1.3-3.4A7.1 7.1 0 0 1 3.5 12.5C3.5 8.4 7.3 5 12 5s8.5 3.4 8.5 7.5Z"/><path d="M9.5 12.5h5"/></svg></div>
+          <h3>Comportamento alimentar</h3>
+          <p>Compulsão, culpa e ansiedade com a comida: entender o porquê antes de mudar o quê.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="processo" class="processo">
+    <div class="wrap">
+      <span class="rotulo revelar">Como funciona</span>
+      <h2 class="titulo-secao revelar">Do primeiro oi ao seu plano em quatro etapas.</h2>
+      <div class="passos">
+        <div class="passo revelar"><b>01</b><h3>Contato</h3><p>Você me chama no WhatsApp, conta seu objetivo e agendamos o melhor horário.</p></div>
+        <div class="passo revelar"><b>02</b><h3>Avaliação</h3><p>Consulta com anamnese completa, avaliação antropométrica e leitura da sua rotina.</p></div>
+        <div class="passo revelar"><b>03</b><h3>Seu plano</h3><p>Plano alimentar individualizado, com substituições reais e orientação de suplementação quando necessário.</p></div>
+        <div class="passo revelar"><b>04</b><h3>Acompanhamento</h3><p>Retornos para ajustar o que precisa e manter o resultado a longo prazo.</p></div>
+      </div>
+
+      <div class="formatos">
+        <div class="formato revelar">
+          <span class="rotulo">Presencial</span>
+          <h3>Consultório em Pilares</h3>
+          <p>Av. Dom Hélder Câmara, 6644 — Pilares, Rio de Janeiro/RJ, 20771-005.</p>
+          <ul>
+            <li>Avaliação antropométrica completa</li>
+            <li>Fácil acesso pela Dom Hélder Câmara</li>
+          </ul>
+        </div>
+        <div class="formato destaque revelar">
+          <span class="rotulo">On-line</span>
+          <h3>De qualquer lugar do Brasil</h3>
+          <p>Mesmo cuidado, por videochamada — com material e acompanhamento enviados por você depois da consulta.</p>
+          <ul>
+            <li>Consulta por vídeo, sem sair de casa</li>
+            <li>Plano e orientações enviados no seu celular</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato" style="background:var(--papel)">
+    <div class="wrap contato-grade">
+      <div class="revelar">
+        <span class="rotulo">Vamos começar</span>
+        <h2 class="titulo-secao">Me conta o seu objetivo.</h2>
+        <p style="margin-top:18px;color:var(--cacau-70)">Preencha e o WhatsApp abre com a mensagem pronta — é só enviar.</p>
+
+        <div style="margin-top:32px">
+          <div class="campo">
+            <label for="nome">Seu nome</label>
+            <input id="nome" type="text" placeholder="Como você prefere ser chamada(o)?" autocomplete="name">
+          </div>
+          <div class="campo">
+            <label for="objetivo">Seu objetivo</label>
+            <select id="objetivo">
+              <option>Emagrecimento</option>
+              <option>Hipertrofia</option>
+              <option>Nutrição esportiva</option>
+              <option>Comportamento alimentar</option>
+              <option>Ainda não sei, quero conversar</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="formato">Formato da consulta</label>
+            <select id="formato">
+              <option>On-line</option>
+              <option>Presencial, em Pilares</option>
+              <option>Tanto faz</option>
+            </select>
+          </div>
+          <p class="previa">Sua mensagem: <strong id="previa">Oi, Anna! Quero começar meu acompanhamento.</strong></p>
+          <a class="btn btn-principal" id="enviar" href="https://wa.me/5521977494288" target="_blank" rel="noopener">Abrir no WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="infos revelar">
+        <a class="info" href="https://wa.me/5521977494288" target="_blank" rel="noopener">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.2-.8 1-.9 1.1-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.7 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2"/></svg></span>
+          <span style="display:block"><span>WhatsApp</span><b>(21) 97749-4288</b></span>
+        </a>
+        <a class="info" href="https://www.instagram.com/nutricarolbarross" target="_blank" rel="noopener">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+          <span style="display:block"><span>Instagram</span><b>@nutricarolbarross</b></span>
+        </a>
+        <a class="info" href="mailto:nutriannacarolyna@gmail.com">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
+          <span style="display:block"><span>E-mail</span><b>nutriannacarolyna@gmail.com</b></span>
+        </a>
+        <a class="info" href="https://maps.google.com/?q=Av.+Dom+Hélder+Câmara,+6644+-+Pilares,+Rio+de+Janeiro" target="_blank" rel="noopener">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <span style="display:block"><span>Consultório</span><b>Av. Dom Hélder Câmara, 6644 — Pilares, RJ</b></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="rodape-topo">
+      <svg class="assinatura" viewBox="0 0 360 210" role="img" aria-label="Anna Carolyna Barros — Nutricionista clínica e esportiva"><use href="#lockup-ac"/></svg>
+      <div class="redes">
+        <a href="https://wa.me/5521977494288" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.2-.8 1-.9 1.1-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.7 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2"/></svg></a>
+        <a href="https://www.instagram.com/nutricarolbarross" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="mailto:nutriannacarolyna@gmail.com" aria-label="E-mail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></a>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <span>© <span id="ano">2026</span> Anna Carolyna Barros. Todos os direitos reservados.</span>
+      <span>Atendimento on-line e presencial — Rio de Janeiro/RJ</span>
+    </div>
+  </div>
+</footer>
+
+<a class="flutuante" href="https://wa.me/5521977494288" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.2-.8 1-.9 1.1-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.3 4.7 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2"/></svg>
+</a>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  const nome = document.getElementById('nome');
+  const objetivo = document.getElementById('objetivo');
+  const formato = document.getElementById('formato');
+  const previa = document.getElementById('previa');
+  const enviar = document.getElementById('enviar');
+
+  function montar(){
+    const n = nome.value.trim();
+    const texto = `Oi, Anna! ${n ? 'Aqui é ' + n + '. ' : ''}Meu objetivo é ${objetivo.value.toLowerCase()} e prefiro consulta ${formato.value.toLowerCase()}. Podemos agendar?`;
+    previa.textContent = texto;
+    enviar.href = 'https://wa.me/5521977494288?text=' + encodeURIComponent(texto);
+  }
+  [nome, objetivo, formato].forEach(el => el.addEventListener('input', montar));
+  montar();
+
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e, i) => {
+      if(e.isIntersecting){
+        setTimeout(() => e.target.classList.add('visivel'), i * 90);
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold:.14, rootMargin:'0px 0px -40px'});
+  document.querySelectorAll('.revelar').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
